@@ -104,11 +104,11 @@ dialog h3{font-size:1.5rem;margin-bottom:14px}
 dialog p{font-size:.9rem;margin-bottom:10px}
 dialog form{margin-top:14px}
 
-/* intro: ícone 2s a entrar, 2s parado, 1s a sair; depois o site entra em 1,5s */
-.intro{position:fixed;inset:0;z-index:100;background:var(--cream);display:grid;place-items:center;pointer-events:none;animation:introBg 6.5s linear forwards}
-.intro img{width:min(300px,64vw);mix-blend-mode:multiply;opacity:0;animation:introLogo 5s linear forwards}
+/* intro curta: entra 1s, fica 1s, sai 0,5s; o site aparece em 1s */
+.intro{position:fixed;inset:0;z-index:100;background:var(--cream);display:grid;place-items:center;pointer-events:none;animation:introBg 3.5s linear forwards}
+.intro img{width:min(200px,50vw);mix-blend-mode:multiply;opacity:0;animation:introLogo 2.5s linear forwards}
 @keyframes introLogo{0%{opacity:0}40%,80%{opacity:1}100%{opacity:0}}
-@keyframes introBg{0%,76.9%{opacity:1;visibility:visible}100%{opacity:0;visibility:hidden}}
+@keyframes introBg{0%,71.4%{opacity:1;visibility:visible}100%{opacity:0;visibility:hidden}}
 
 @media(max-width:780px){
   .menu-toggle{display:block}
