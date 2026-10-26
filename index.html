@@ -3,49 +3,64 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SMASHED | Burger and Fries</title>
+<title>Smashed | Restaurante</title>
 <meta name="description" content="Smash burgers com crosta dourada e interior suculento. Rua de Santa Catarina, Porto.">
-<link rel="canonical" href="https://smashedburger.me/">
-<link rel="icon" type="image/png" href="icon.png">
-<meta property="og:title" content="SMASHED | Burger and Fries">
-<meta property="og:url" content="https://smashedburger.me/">
+<meta name="theme-color" content="#16140f">
+<link rel="canonical" href="https://www.smashedburger.me/">
+<link rel="icon" type="image/png" href="/icon.png?v=2">
+<link rel="shortcut icon" href="/icon.png?v=2">
+<link rel="apple-touch-icon" href="/icon.png?v=2">
+<meta property="og:title" content="Smashed | Restaurante">
+<meta property="og:url" content="https://www.smashedburger.me/">
+<meta property="og:image" content="https://www.smashedburger.me/icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&display=swap">
 <link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Restaurant","name":"Smashed Burger and Fries","url":"https://www.smashedburger.me/","image":"https://www.smashedburger.me/icon.png","telephone":"+351257431226","email":"info@smashed.pt","servesCuisine":"Hambúrgueres","address":{"@type":"PostalAddress","streetAddress":"Rua de Santa Catarina","addressLocality":"Porto","addressCountry":"PT"},"sameAs":["https://www.instagram.com/smashed.pt"]}
+</script>
 </head>
 <body>
 
 <div class="intro" aria-hidden="true"><img src="icon.png" alt=""></div>
+<a class="skip" href="#inicio">Saltar para o conteúdo</a>
 
 <header class="nav">
   <div class="wrap bar">
     <a class="logo" href="#inicio">SMASHED<small>Burger and Fries</small></a>
-    <nav aria-label="Principal">
+    <nav id="mainnav" aria-label="Principal">
       <a href="#menu">Menu</a><a href="#marca">A marca</a><a href="#contactos">Contactos</a>
     </nav>
     <a class="btn sm" href="#menu">Pedir</a>
+    <button class="menu-toggle" id="toggle" aria-expanded="false" aria-controls="mainnav">Menu</button>
   </div>
 </header>
 
 <main>
 <section class="hero" id="inicio">
-  <div class="wrap hero-grid">
-    <div class="hero-text">
-      <h1>Smash burgers<br>com carácter.</h1>
-      <p>Carne 100% bovina, esmagada na chapa para uma crosta dourada e um interior suculento. Uma experiência pensada para quem aprecia sabor com atitude.</p>
-      <div class="cta"><a class="btn dark" href="#menu">Descobrir o menu</a><a class="btn ghost" href="#contactos">Visitar-nos</a></div>
-    </div>
-    <div class="hero-img">
-      <img src="img/Double_Smash.png" alt="Double Smash, hambúrguer com dois patties, queijo, alface e tomate" width="420" height="300">
-    </div>
+  <div class="wrap">
+    <h1>Smash burgers.</h1>
+    <p>Carne 100% bovina, esmagada na chapa para uma crosta dourada e um interior suculento. Uma experiência pensada para quem aprecia sabor com atitude.</p>
+    <div class="cta"><a class="btn dark" href="#menu">Descobrir o menu</a><a class="btn ghost" href="#contactos">Visitar-nos</a></div>
   </div>
 </section>
 
-<section class="facts">
-  <div class="wrap">
-    <p><strong>160 g</strong>de carne em cada patty</p>
-    <p><strong>Pão brioche</strong>amanteigado e levemente tostado</p>
-    <p><strong>Smash na chapa</strong>para a crosta perfeita</p>
+<section class="ticker" aria-label="Destaques">
+  <div class="track" id="track">
+    <ul>
+      <li>160 g de carne em cada patty</li>
+      <li>Carne 100% bovina</li>
+      <li>Pão brioche amanteigado e tostado</li>
+      <li>Smash na chapa</li>
+      <li>Queijo americano derretido</li>
+      <li>Pickles crocantes</li>
+      <li>Smash Sauce e Secret Sauce</li>
+      <li>Batata normal ou batata-doce</li>
+      <li>Beer Smashed</li>
+      <li>Rua de Santa Catarina, Porto</li>
+      <li>Cada dentada vale a pena</li>
+      <li>Smash burgers. Big flavours.</li>
+    </ul>
   </div>
 </section>
 
@@ -58,6 +73,7 @@
       <button class="tab" data-cat="all" aria-pressed="true">Tudo</button>
       <button class="tab" data-cat="burger" aria-pressed="false">Burgers</button>
       <button class="tab" data-cat="fries" aria-pressed="false">Fries</button>
+      <button class="tab" data-cat="extra" aria-pressed="false">Extras</button>
       <button class="tab" data-cat="drink" aria-pressed="false">Bebidas</button>
     </div>
 
@@ -85,25 +101,33 @@
 
       <article class="card" data-cat="fries">
         <img src="img/Fries.png" alt="Fries" loading="lazy">
-        <div class="head"><h3>Fries</h3><span class="price">2,50 €</span></div>
-        <p>Douradas, crocantes e cheias de sabor. Batata normal ou batata-doce. Pequeno 2,50 €, grande 3,60 €.</p>
-        <a class="btn sm dark" href="mailto:info@smashed.pt?subject=Pedido%20Smashed&body=1x%20Fries">Pedir</a>
+        <div class="head"><h3>Fries</h3></div>
+        <p>Douradas, crocantes e cheias de sabor. Batata normal ou batata-doce.</p>
+        <ul class="list">
+          <li><span>Pequeno</span><span class="price">2,50 €</span></li>
+          <li><span>Grande</span><span class="price">3,60 €</span></li>
+        </ul>
+        <div class="btns">
+          <a class="btn sm dark" href="mailto:info@smashed.pt?subject=Pedido%20Smashed&body=1x%20Fries%20pequeno">Pedir pequeno</a>
+          <a class="btn sm dark" href="mailto:info@smashed.pt?subject=Pedido%20Smashed&body=1x%20Fries%20grande">Pedir grande</a>
+        </div>
       </article>
 
-      <article class="card" data-cat="fries">
-        <img src="img/Fries.png" alt="Truffle Fries" loading="lazy">
-        <div class="head"><h3>Truffle Fries</h3><span class="price">4,00 €</span></div>
-        <p>As nossas fries com um toque de trufa, ideais para acompanhar qualquer burger.</p>
+      <article class="card" data-cat="extra">
+        <div class="head"><h3>Extra</h3></div>
+        <ul class="list">
+          <li><span>Truffle Fries</span><span class="price">4,00 €</span></li>
+        </ul>
         <a class="btn sm dark" href="mailto:info@smashed.pt?subject=Pedido%20Smashed&body=1x%20Truffle%20Fries">Pedir</a>
       </article>
 
-      <article class="card drinks" data-cat="drink">
+      <article class="card" data-cat="drink">
         <div class="head"><h3>Bebidas</h3></div>
-        <ul>
-          <li><span>Água</span><span>1,50 €</span></li>
-          <li><span>Água das Pedras</span><span>2,00 €</span></li>
-          <li><span>Refrigerantes</span><span>2,50 €</span></li>
-          <li><span>Beer Smashed</span><span>3,00 €</span></li>
+        <ul class="list">
+          <li><span>Água</span><span class="price">1,50 €</span></li>
+          <li><span>Água das Pedras</span><span class="price">2,00 €</span></li>
+          <li><span>Refrigerantes</span><span class="price">2,50 €</span></li>
+          <li><span>Beer Smashed</span><span class="price">3,00 €</span></li>
         </ul>
       </article>
     </div>
@@ -159,8 +183,30 @@
 </main>
 
 <footer>
-  <div class="wrap foot"><span>© 2026 SMASHED Burger and Fries</span><span>smashedburger.me</span></div>
+  <div class="wrap fgrid">
+    <div>
+      <strong class="fbrand">SMASHED</strong>
+      <p>Burger and Fries<br>Rua de Santa Catarina, Porto<br>info@smashed.pt</p>
+    </div>
+    <div class="legal">
+      <button data-doc="priv">Política de Privacidade</button>
+      <button data-doc="cook">Política de Cookies</button>
+      <button data-doc="termos">Termos e Condições</button>
+      <button data-doc="alerg">Alergénios</button>
+      <a href="https://www.livroreclamacoes.pt" target="_blank" rel="noopener">Livro de Reclamações</a>
+    </div>
+  </div>
+  <div class="wrap fbase">
+    <span>© 2026 SMASHED Burger and Fries. Preços com IVA incluído.</span>
+    <span>Projeto YME | Miguel Sousa</span>
+  </div>
 </footer>
+
+<dialog id="legal">
+  <h3 id="lt"></h3>
+  <div id="lb"></div>
+  <form method="dialog"><button class="btn dark sm">Fechar</button></form>
+</dialog>
 
 <script src="script.js"></script>
 </body>
