@@ -2,7 +2,7 @@
 <html lang="pt-PT">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Smashed | Restaurante</title>
 <meta name="description" content="Smash burgers com crosta dourada e interior suculento. Rua de Santa Catarina, Porto.">
 <meta name="theme-color" content="#16140f">
@@ -31,7 +31,7 @@
     <nav id="mainnav" aria-label="Principal">
       <a href="#menu">Menu</a><a href="#marca">A marca</a><a href="#contactos">Contactos</a>
     </nav>
-    <a class="btn sm" href="#menu">Pedir</a>
+    <a class="btn sm navbtn" href="#menu">Pedir</a>
     <button class="menu-toggle" id="toggle" aria-expanded="false" aria-controls="mainnav">Menu</button>
   </div>
 </header>
@@ -67,7 +67,7 @@
 <section class="menu" id="menu">
   <div class="wrap">
     <h2>O nosso menu</h2>
-    <p class="lead">Cada receita foi pensada para equilibrar sabor e textura. Escolhe o teu favorito e envia o pedido por email.</p>
+    <p class="lead">Cada receita foi pensada para equilibrar sabor e textura. Escolhe o teu favorito e monta o teu pedido.</p>
 
     <div class="tabs" role="group" aria-label="Filtrar por categoria">
       <button class="tab" data-cat="all" aria-pressed="true">Tudo</button>
@@ -82,21 +82,21 @@
         <img src="img/Original_Smash.png" alt="Original Smash" loading="lazy">
         <div class="head"><h3>Original Smash</h3><span class="price">9,90 €</span></div>
         <p>Dois smash patties premium de 160 g, crocantes por fora e suculentos por dentro, com queijo americano derretido, cebola fresca, pickles crocantes, ketchup e mostarda cremosa.</p>
-        <a class="btn sm dark" href="mailto:info@smashed.pt?subject=Pedido%20Smashed&body=1x%20Original%20Smash">Pedir</a>
+        <button class="btn sm dark add" data-name="Original Smash" data-price="9.9">Pedir</button>
       </article>
 
       <article class="card" data-cat="burger">
         <img src="img/Double_Smash.png" alt="Double Smash" loading="lazy">
         <div class="head"><h3>Double Smash</h3><span class="price">11,90 €</span></div>
         <p>Dois smash patties premium de 160 g cobertos com queijo americano derretido, alface crocante, cebola fresca, tomate maduro, pickles crocantes e a nossa Smash Sauce.</p>
-        <a class="btn sm dark" href="mailto:info@smashed.pt?subject=Pedido%20Smashed&body=1x%20Double%20Smash">Pedir</a>
+        <button class="btn sm dark add" data-name="Double Smash" data-price="11.9">Pedir</button>
       </article>
 
       <article class="card" data-cat="burger">
         <img src="img/Bacon_Smash.png" alt="Bacon Smash" loading="lazy">
         <div class="head"><h3>Bacon Smash</h3><span class="price">10,90 €</span></div>
         <p>Dois smash patties premium de 160 g, acompanhados por tiras crocantes de bacon, queijo americano derretido e o nosso inconfundível Secret Sauce.</p>
-        <a class="btn sm dark" href="mailto:info@smashed.pt?subject=Pedido%20Smashed&body=1x%20Bacon%20Smash">Pedir</a>
+        <button class="btn sm dark add" data-name="Bacon Smash" data-price="10.9">Pedir</button>
       </article>
 
       <article class="card" data-cat="fries">
@@ -104,30 +104,25 @@
         <div class="head"><h3>Fries</h3></div>
         <p>Douradas, crocantes e cheias de sabor. Batata normal ou batata-doce.</p>
         <ul class="list">
-          <li><span>Pequeno</span><span class="price">2,50 €</span></li>
-          <li><span>Grande</span><span class="price">3,60 €</span></li>
+          <li><span>Pequeno <b class="price">2,50 €</b></span><button class="btn sm dark add" data-name="Fries pequeno" data-price="2.5">Pedir</button></li>
+          <li><span>Grande <b class="price">3,60 €</b></span><button class="btn sm dark add" data-name="Fries grande" data-price="3.6">Pedir</button></li>
         </ul>
-        <div class="btns">
-          <a class="btn sm dark" href="mailto:info@smashed.pt?subject=Pedido%20Smashed&body=1x%20Fries%20pequeno">Pedir pequeno</a>
-          <a class="btn sm dark" href="mailto:info@smashed.pt?subject=Pedido%20Smashed&body=1x%20Fries%20grande">Pedir grande</a>
-        </div>
       </article>
 
       <article class="card" data-cat="extra">
         <div class="head"><h3>Extra</h3></div>
         <ul class="list">
-          <li><span>Truffle Fries</span><span class="price">4,00 €</span></li>
+          <li><span>Truffle Fries <b class="price">4,00 €</b></span><button class="btn sm dark add" data-name="Truffle Fries" data-price="4">Pedir</button></li>
         </ul>
-        <a class="btn sm dark" href="mailto:info@smashed.pt?subject=Pedido%20Smashed&body=1x%20Truffle%20Fries">Pedir</a>
       </article>
 
       <article class="card" data-cat="drink">
         <div class="head"><h3>Bebidas</h3></div>
         <ul class="list">
-          <li><span>Água</span><span class="price">1,50 €</span></li>
-          <li><span>Água das Pedras</span><span class="price">2,00 €</span></li>
-          <li><span>Refrigerantes</span><span class="price">2,50 €</span></li>
-          <li><span>Beer Smashed</span><span class="price">3,00 €</span></li>
+          <li><span>Água <b class="price">1,50 €</b></span><button class="btn sm dark add" data-name="Água" data-price="1.5">Pedir</button></li>
+          <li><span>Água das Pedras <b class="price">2,00 €</b></span><button class="btn sm dark add" data-name="Água das Pedras" data-price="2">Pedir</button></li>
+          <li><span>Refrigerantes <b class="price">2,50 €</b></span><button class="btn sm dark add" data-name="Refrigerante" data-price="2.5">Pedir</button></li>
+          <li><span>Beer Smashed <b class="price">3,00 €</b></span><button class="btn sm dark add" data-name="Beer Smashed" data-price="3">Pedir</button></li>
         </ul>
       </article>
     </div>
@@ -141,7 +136,7 @@
         <h3>Menu</h3>
         <p>Original Smash, bebida e batatas fritas ou batata-doce.</p>
         <p class="price big">13,90 €</p>
-        <a class="btn" href="mailto:info@smashed.pt?subject=Pedido%20Smashed&body=1x%20Menu%20Original%20Smash">Pedir menu</a>
+        <button class="btn add" data-name="Menu Original Smash" data-price="13.9">Pedir menu</button>
       </div>
     </aside>
   </div>
@@ -173,7 +168,7 @@
     <form id="form" novalidate>
       <h3>Envia-nos uma mensagem</h3>
       <label for="n">Nome</label><input id="n" autocomplete="name">
-      <label for="e">Email</label><input id="e" type="email" autocomplete="email">
+      <label for="e">Email</label><input id="e" type="email" autocomplete="email" inputmode="email">
       <label for="m">Mensagem</label><textarea id="m" rows="4"></textarea>
       <button class="btn dark" type="submit">Enviar mensagem</button>
       <p class="msg" id="msg" role="status"></p>
@@ -201,6 +196,20 @@
     <span>Projeto YME | Miguel Sousa</span>
   </div>
 </footer>
+
+<!-- Lista de pedido -->
+<aside class="cartbar" id="cartbar" aria-label="O teu pedido">
+  <button class="cart-toggle" id="cartToggle" aria-expanded="false" aria-controls="cartBody">
+    <span id="cartCount">O teu pedido</span><span id="cartTotal"></span>
+  </button>
+  <div class="cart-body" id="cartBody">
+    <ul id="cartList"></ul>
+    <div class="cart-actions">
+      <button class="clear" id="cartClear">Limpar</button>
+      <button class="btn" id="cartGo">Pedir na Glovo</button>
+    </div>
+  </div>
+</aside>
 
 <dialog id="legal">
   <h3 id="lt"></h3>

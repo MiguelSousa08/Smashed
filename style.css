@@ -123,3 +123,52 @@ dialog form{margin-top:14px}
   .intro{display:none}
   .ticker{overflow-x:auto}
 }
+
+/* lista de pedido */
+.cartbar{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:50;max-width:520px;margin:0 auto;background:var(--ink);color:#fff;border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.4);display:none}
+.cartbar.on{display:block}
+.cartbar.pulse{animation:pulse .3s}
+@keyframes pulse{50%{transform:scale(1.03)}}
+.cart-toggle{width:100%;min-height:56px;display:flex;justify-content:space-between;align-items:center;gap:12px;background:none;border:0;color:#fff;font:700 1rem "Poppins",sans-serif;padding:0 20px;cursor:pointer}
+#cartTotal{color:var(--mustard)}
+.cart-body{display:none;padding:0 20px 18px;max-height:55vh;overflow:auto}
+.cartbar.open .cart-body{display:block}
+.cart-body ul{list-style:none;padding:0}
+.cart-body li{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0;border-top:1px solid rgba(255,255,255,.15);font-size:.9rem}
+.qty{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.qty button{width:36px;height:36px;border-radius:50%;border:0;background:var(--mustard);color:var(--ink);font:800 1.1rem "Poppins",sans-serif;cursor:pointer}
+.cart-actions{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:14px}
+.clear{background:none;border:0;color:#fff;text-decoration:underline;font:inherit;font-size:.85rem;cursor:pointer;padding:10px}
+body.has-cart footer{padding-bottom:96px}
+
+/* botões e listas do menu */
+.list li{align-items:center;gap:12px}
+.list li b{margin-left:8px}
+button.btn{font-family:"Poppins",sans-serif}
+
+/* telemóvel */
+html{-webkit-text-size-adjust:100%}
+a,button{-webkit-tap-highlight-color:transparent}
+.btn,.tab,.menu-toggle,.legal button,.legal a{min-height:44px}
+.btn.sm{display:inline-flex;align-items:center}
+input,textarea{font-size:16px}
+@media(max-width:780px){
+  .wrap{padding:0 18px}
+  .bar{height:60px}
+  .navbtn{display:none}
+  .nav nav{top:60px}
+  .hero{padding:64px 0 110px}
+  .hero p{font-size:1rem}
+  .cta .btn{flex:1 1 100%;text-align:center;justify-content:center}
+  .menu{padding:56px 0}
+  .brand,.contact{padding:60px 0}
+  .tabs{flex-wrap:nowrap;overflow-x:auto;margin-right:-18px;padding-right:18px;scrollbar-width:none}
+  .tabs::-webkit-scrollbar{display:none}
+  .tab{flex-shrink:0}
+  .grid{grid-template-columns:1fr}
+  .card{padding:22px}
+  .combo{padding:24px}
+  .fgrid{flex-direction:column}
+  .legal a,.legal button{padding:6px 0}
+  form .btn{width:100%;justify-content:center}
+}

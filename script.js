@@ -1,3 +1,6 @@
+// Troca pelo link da Glovo do restaurante
+const GLOVO_URL = "https://glovoapp.com/pt/pt/porto/";
+
 // Filtro do menu
 const tabs = document.querySelectorAll(".tab");
 const cards = document.querySelectorAll(".card");
@@ -9,16 +12,10 @@ tabs.forEach(tab => tab.addEventListener("click", () => {
 // Faixa em movimento: duplica a lista para o ciclo ser contínuo
 const track = document.getElementById("track");
 const first = track.querySelector("ul");
-for (let i = 0; i < 2; i++) { // duas cópias; com a original dá 3 listas
+for (let i = 0; i < 3; i++) {
   const copy = first.cloneNode(true);
   copy.setAttribute("aria-hidden", "true");
   track.appendChild(copy);
-}
-// Para um loop perfeito com translateX(-50%), garante um número par de listas
-if (track.children.length % 2) {
-  const extra = first.cloneNode(true);
-  extra.setAttribute("aria-hidden", "true");
-  track.appendChild(extra);
 }
 
 // Menu mobile
@@ -32,6 +29,60 @@ nav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
   nav.classList.remove("open");
   toggle.setAttribute("aria-expanded", "false");
 }));
+
+// Lista de pedido
+const eur = v => v.toFixed(2).replace(".", ",") + " €";
+const cart = {}; // nome -> {price, qty}
+const bar = document.getElementById("cartbar");
+const list = document.getElementById("cartList");
+
+function drawCart() {
+  const names = Object.keys(cart);
+  if (!names.length) { bar.classList.remove("on", "open"); document.body.classList.remove("has-cart"); return; }
+  let total = 0, count = 0;
+  list.innerHTML = "";
+  names.forEach(n => {
+    const { price, qty } = cart[n];
+    total += price * qty; count += qty;
+    const li = document.createElement("li");
+    const label = document.createElement("span");
+    label.textContent = n + " · " + eur(price * qty);
+    const ctrl = document.createElement("span");
+    ctrl.className = "qty";
+    const minus = document.createElement("button");
+    minus.textContent = "−"; minus.setAttribute("aria-label", "Remover um " + n);
+    minus.addEventListener("click", () => { if (--cart[n].qty <= 0) delete cart[n]; drawCart(); });
+    const q = document.createElement("b"); q.textContent = qty;
+    const plus = document.createElement("button");
+    plus.textContent = "+"; plus.setAttribute("aria-label", "Adicionar um " + n);
+    plus.addEventListener("click", () => { cart[n].qty++; drawCart(); });
+    ctrl.append(minus, q, plus);
+    li.append(label, ctrl);
+    list.appendChild(li);
+  });
+  document.getElementById("cartCount").textContent = "O teu pedido (" + count + ")";
+  document.getElementById("cartTotal").textContent = eur(total);
+  bar.classList.add("on");
+  document.body.classList.add("has-cart");
+}
+
+document.querySelectorAll(".add").forEach(b => b.addEventListener("click", () => {
+  const n = b.dataset.name;
+  cart[n] = cart[n] || { price: parseFloat(b.dataset.price), qty: 0 };
+  cart[n].qty++;
+  drawCart();
+  bar.classList.remove("pulse"); void bar.offsetWidth; bar.classList.add("pulse");
+}));
+document.getElementById("cartToggle").addEventListener("click", () => {
+  const open = bar.classList.toggle("open");
+  document.getElementById("cartToggle").setAttribute("aria-expanded", open);
+});
+document.getElementById("cartClear").addEventListener("click", () => {
+  Object.keys(cart).forEach(k => delete cart[k]); drawCart();
+});
+document.getElementById("cartGo").addEventListener("click", () => {
+  window.open(GLOVO_URL, "_blank", "noopener");
+});
 
 // Formulário: valida e abre o email
 document.getElementById("form").addEventListener("submit", e => {
@@ -56,7 +107,7 @@ const DOCS = {
   priv: ["Política de Privacidade", [
     "Responsável pelo tratamento: [denominação social], NIF [a preencher], Rua de Santa Catarina, Porto. Contacto: info@smashed.pt.",
     "Dados tratados: nome, email e mensagem que nos enviares através do formulário ou por email, apenas para responder ao teu pedido.",
-    "Este site não guarda os dados do formulário: ao enviar, abre-se o teu programa de email.",
+    "Este site não guarda os dados do formulário: ao enviar, abre-se o teu programa de email. A lista de pedido não é guardada nem enviada; a encomenda é concluída na Glovo, que tem a sua própria política de privacidade.",
     "Conservamos os dados apenas o tempo necessário para responder. Tens direito de acesso, retificação, apagamento, limitação e oposição, através de info@smashed.pt.",
     "Podes apresentar reclamação à Comissão Nacional de Proteção de Dados (cnpd.pt)."
   ]],
@@ -68,7 +119,7 @@ const DOCS = {
   termos: ["Termos e Condições", [
     "Entidade: [denominação social], NIF [a preencher], Rua de Santa Catarina, Porto.",
     "Os preços apresentados incluem IVA à taxa legal em vigor e podem ser alterados sem aviso prévio.",
-    "Os pedidos enviados por email só ficam confirmados após resposta do restaurante.",
+    "As encomendas são concluídas na Glovo e ficam sujeitas aos termos dessa plataforma.",
     "A marca, o logótipo e os conteúdos deste site pertencem à SMASHED Burger and Fries e não podem ser usados sem autorização.",
     "Em caso de litígio de consumo, podes recorrer a uma entidade de resolução alternativa de litígios: [entidade a preencher]."
   ]],
