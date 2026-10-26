@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SMASHED | Burger and Fries</title>
+<meta name="description" content="Smash burgers com crosta estaladiça e interior suculento. Rua de Santa Catarina, Porto.">
+<link rel="canonical" href="https://smashedburger.me/">
+<meta property="og:title" content="SMASHED | Burger and Fries">
+<meta property="og:url" content="https://smashedburger.me/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap bar">
+    <a class="logo" href="#inicio">SMASHED<small>Burger and Fries</small></a>
+    <nav aria-label="Principal">
+      <a href="#menu">Menu</a><a href="#marca">A marca</a><a href="#contactos">Contactos</a>
+    </nav>
+    <a class="btn sm" href="#menu">Pedir</a>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Esmaga<br>a fome.</h1>
+      <p>Carne 100% bovina esmagada na chapa quente. Crosta estaladiça por fora, suculento por dentro.</p>
+      <div class="cta"><a class="btn" href="#menu">Ver o menu</a><a class="btn ghost" href="#contactos">Onde estamos</a></div>
+    </div>
+    <div class="hero-img">
+      <img src="img/Double_Smash.png" alt="Double Smash, hambúrguer com dois patties, queijo, alface e tomate" width="420" height="300">
+    </div>
+  </div>
+</section>
+
+<section class="facts">
+  <div class="wrap">
+    <p><strong>160 g</strong> de carne por patty</p>
+    <p><strong>Brioche</strong> amanteigado e tostado</p>
+    <p><strong>Smash</strong> na chapa, sem atalhos</p>
+  </div>
+</section>
+
+<section class="menu" id="menu">
+  <div class="wrap">
+    <h2>O menu</h2>
+    <p class="lead">Escolhe o teu burger e carrega em Pedir: abre-se um email com o pedido pronto a enviar.</p>
+
+    <div class="tabs" role="group" aria-label="Filtrar por categoria">
+      <button class="tab" data-cat="all" aria-pressed="true">Tudo</button>
+      <button class="tab" data-cat="burger" aria-pressed="false">Burgers</button>
+      <button class="tab" data-cat="fries" aria-pressed="false">Fries</button>
+      <button class="tab" data-cat="drink" aria-pressed="false">Bebidas</button>
+    </div>
+
+    <div class="grid">
+      <article class="card" data-cat="burger">
+        <img src="img/Original_Smash.png" alt="Original Smash" loading="lazy">
+        <div class="head"><h3>Original Smash</h3><span class="price">9,90 €</span></div>
+        <p>Dois smash patties premium de 160 g, crocantes por fora e suculentos por dentro, com queijo americano derretido, cebola fresca, pickles crocantes, ketchup e mostarda cremosa.</p>
+        <a class="btn sm dark" href="mailto:info@smashed.pt?subject=Pedido%20Smashed&body=1x%20Original%20Smash">Pedir</a>
+      </article>
+
+      <article class="card" data-cat="burger">
+        <img src="img/Double_Smash.png" alt="Double Smash" loading="lazy">
+        <div class="head"><h3>Double Smash</h3><span class="price">11,90 €</span></div>
+        <p>Dois smash patties premium de 160 g cobertos com queijo americano derretido, alface crocante, cebola fresca, tomate maduro, pickles crocantes e a nossa Smash Sauce.</p>
+        <a class="btn sm dark" href="mailto:info@smashed.pt?subject=Pedido%20Smashed&body=1x%20Double%20Smash">Pedir</a>
+      </article>
+
+      <article class="card" data-cat="burger">
+        <img src="img/Bacon_Smash.png" alt="Bacon Smash" loading="lazy">
+        <div class="head"><h3>Bacon Smash</h3><span class="price">10,90 €</span></div>
+        <p>Dois smash patties premium de 160 g, acompanhados por tiras crocantes de bacon, queijo americano derretido e o nosso inconfundível Secret Sauce.</p>
+        <a class="btn sm dark" href="mailto:info@smashed.pt?subject=Pedido%20Smashed&body=1x%20Bacon%20Smash">Pedir</a>
+      </article>
+
+      <article class="card" data-cat="fries">
+        <img src="img/Fries.png" alt="Fries" loading="lazy">
+        <div class="head"><h3>Fries</h3><span class="price">2,50 €</span></div>
+        <p>Douradas, crocantes e cheias de sabor. Batata normal ou batata-doce. Pequeno 2,50 €, grande 3,60 €.</p>
+        <a class="btn sm dark" href="mailto:info@smashed.pt?subject=Pedido%20Smashed&body=1x%20Fries">Pedir</a>
+      </article>
+
+      <article class="card" data-cat="fries">
+        <img src="img/Fries.png" alt="Truffle Fries" loading="lazy">
+        <div class="head"><h3>Truffle Fries</h3><span class="price">4,00 €</span></div>
+        <p>As nossas fries com um toque de trufa. Para mergulhar no molho favorito.</p>
+        <a class="btn sm dark" href="mailto:info@smashed.pt?subject=Pedido%20Smashed&body=1x%20Truffle%20Fries">Pedir</a>
+      </article>
+
+      <article class="card drinks" data-cat="drink">
+        <div class="head"><h3>Bebidas</h3></div>
+        <ul>
+          <li><span>Água</span><span>1,50 €</span></li>
+          <li><span>Água das Pedras</span><span>2,00 €</span></li>
+          <li><span>Refrigerantes</span><span>2,50 €</span></li>
+          <li><span>Beer Smashed</span><span>3,00 €</span></li>
+        </ul>
+      </article>
+    </div>
+
+    <aside class="combo">
+      <div class="combo-img">
+        <img src="img/Original_Smash.png" alt="" loading="lazy">
+        <img src="img/Fries.png" alt="" loading="lazy">
+      </div>
+      <div>
+        <h3>Menu</h3>
+        <p>Original Smash + bebida + batatas fritas ou batata-doce.</p>
+        <p class="price big">13,90 €</p>
+        <a class="btn" href="mailto:info@smashed.pt?subject=Pedido%20Smashed&body=1x%20Menu%20Original%20Smash">Pedir menu</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="brand" id="marca">
+  <div class="wrap">
+    <h2>Mais do que uma hamburgueria.</h2>
+    <p class="lead">Queremos transformar um simples hambúrguer num momento que dá vontade de repetir. Boa comida, atitude e vontade de voltar, porque na SMASHED cada dentada tem de valer a pena.</p>
+    <div class="values">
+      <div><h3>Qualidade</h3><p>Ingredientes bons e preparação cuidada em cada burger.</p></div>
+      <div><h3>Simplicidade</h3><p>O essencial, sem complicações. Sabor em primeiro lugar.</p></div>
+      <div><h3>Irreverência</h3><p>Quebrar a rotina, com uma atitude que não passa despercebida.</p></div>
+      <div><h3>Autenticidade</h3><p>Comunicar sem filtros e ser fiel a quem somos.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contactos">
+  <div class="wrap two">
+    <div>
+      <h2>Aparece.</h2>
+      <p><strong>Morada</strong><br>Rua de Santa Catarina, Porto</p>
+      <p><strong>Telefone</strong><br><a href="tel:+351257431226">257 431 226</a></p>
+      <p><strong>Email</strong><br><a href="mailto:info@smashed.pt">info@smashed.pt</a></p>
+      <p><strong>Instagram</strong><br><a href="https://www.instagram.com/smashed.pt" target="_blank" rel="noopener">@smashed.pt</a></p>
+      <a class="btn dark" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Rua+de+Santa+Catarina+Porto">Abrir no mapa</a>
+    </div>
+    <form id="form" novalidate>
+      <h3>Fala connosco</h3>
+      <label for="n">Nome</label><input id="n" autocomplete="name">
+      <label for="e">Email</label><input id="e" type="email" autocomplete="email">
+      <label for="m">Mensagem</label><textarea id="m" rows="4"></textarea>
+      <button class="btn dark" type="submit">Enviar mensagem</button>
+      <p class="msg" id="msg" role="status"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot"><span>© 2026 SMASHED Burger and Fries</span><span>smashedburger.me</span></div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
